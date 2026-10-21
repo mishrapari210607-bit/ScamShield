@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101827">
+    <title>ScamShield — Check a suspicious message</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <a class="brand" href="/" aria-label="ScamShield home">
+          <span class="brand-icon" aria-hidden="true">S</span>
+          ScamShield
+        </a>
+        <span class="header-note">A second look at suspicious messages</span>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">MESSAGE CHECKER</p>
+        <h1 id="page-title">Pause. Check. Then decide.</h1>
+        <p class="intro">Paste a suspicious text or email to check it for common scam warning signs.</p>
+
+        <form id="check-form">
+          <label for="message">Message to check</label>
+          <textarea id="message" name="message" maxlength="10000" required
+            placeholder="Paste the message here. Do not include passwords or other private information."></textarea>
+          <div class="form-footer">
+            <span id="char-count">0 / 10,000</span>
+            <button id="check-button" type="submit">Check message <span aria-hidden="true">→</span></button>
+          </div>
+        </form>
+
+        <section id="result" class="result" aria-live="polite" hidden>
+          <div class="result-heading">
+            <div>
+              <p class="eyebrow">CHECK RESULT</p>
+              <h2 id="risk-title"></h2>
+            </div>
+            <span id="score" class="score"></span>
+          </div>
+          <ul id="signals"></ul>
+          <p id="disclaimer" class="disclaimer"></p>
+        </section>
+        <p id="error" class="error" role="alert" hidden></p>
+        <p class="privacy-note">Your message is checked locally by this app's API and is not saved.</p>
+      </section>
+    </main>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
